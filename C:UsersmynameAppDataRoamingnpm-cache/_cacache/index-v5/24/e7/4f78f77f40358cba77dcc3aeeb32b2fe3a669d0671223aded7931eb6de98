@@ -1,0 +1,2 @@
+
+5a31a48c09debaf9c8820065df1780ea5987a5c2	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/path-to-regexp","integrity":null,"time":1689321709751,"size":"0","metadata":{"time":1689321709751,"url":"http://registry.npmjs.org/path-to-regexp","reqHeaders":{"accept":"application/vnd.npm.install-v1+json; q=1.0, application/json; q=0.8, */*"},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Fri, 14 Jul 2023 08:01:49 GMT","location":"https://registry.npmjs.org/path-to-regexp","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

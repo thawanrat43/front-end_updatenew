@@ -1,0 +1,2 @@
+
+d39651077d97f81f8548388cf8aaa2251aa7b33d	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/imurmurhash","integrity":null,"time":1689321682632,"size":"0","metadata":{"time":1689321682632,"url":"http://registry.npmjs.org/imurmurhash","reqHeaders":{"accept":"application/vnd.npm.install-v1+json; q=1.0, application/json; q=0.8, */*"},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Fri, 14 Jul 2023 08:01:22 GMT","location":"https://registry.npmjs.org/imurmurhash","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

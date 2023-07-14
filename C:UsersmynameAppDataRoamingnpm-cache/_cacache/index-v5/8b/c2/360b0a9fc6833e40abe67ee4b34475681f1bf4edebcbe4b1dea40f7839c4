@@ -1,0 +1,2 @@
+
+b3c2c6fd42cbedec7474aa4641e17f105768ca96	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/ssri/-/ssri-10.0.4.tgz","integrity":null,"time":1689321683879,"size":"0","metadata":{"time":1689321683879,"url":"http://registry.npmjs.org/ssri/-/ssri-10.0.4.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Fri, 14 Jul 2023 08:01:23 GMT","location":"https://registry.npmjs.org/ssri/-/ssri-10.0.4.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

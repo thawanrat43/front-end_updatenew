@@ -1,0 +1,2 @@
+
+e83e724cdbc9c7335c3d4435e64fdcf39c79572a	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/ajv-formats/-/ajv-formats-2.1.1.tgz","integrity":null,"time":1689321684207,"size":"0","metadata":{"time":1689321684207,"url":"http://registry.npmjs.org/ajv-formats/-/ajv-formats-2.1.1.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Fri, 14 Jul 2023 08:01:24 GMT","location":"https://registry.npmjs.org/ajv-formats/-/ajv-formats-2.1.1.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

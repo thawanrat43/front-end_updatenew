@@ -1,0 +1,2 @@
+
+b631988ffcd8cb24a24915675b88f0eb065e0a63	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/yargs-parser","integrity":null,"time":1689321674755,"size":"0","metadata":{"time":1689321674755,"url":"http://registry.npmjs.org/yargs-parser","reqHeaders":{"accept":"application/vnd.npm.install-v1+json; q=1.0, application/json; q=0.8, */*"},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Fri, 14 Jul 2023 08:01:14 GMT","location":"https://registry.npmjs.org/yargs-parser","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

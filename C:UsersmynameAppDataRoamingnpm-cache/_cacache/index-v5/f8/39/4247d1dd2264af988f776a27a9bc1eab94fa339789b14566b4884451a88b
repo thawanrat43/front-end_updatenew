@@ -1,0 +1,2 @@
+
+b3e5c48c20e9e92d4dd5146ab6916da8704a1f07	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/graceful-fs","integrity":null,"time":1689321676666,"size":"0","metadata":{"time":1689321676666,"url":"http://registry.npmjs.org/graceful-fs","reqHeaders":{"accept":"application/vnd.npm.install-v1+json; q=1.0, application/json; q=0.8, */*"},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Fri, 14 Jul 2023 08:01:16 GMT","location":"https://registry.npmjs.org/graceful-fs","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

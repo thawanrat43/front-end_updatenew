@@ -28,7 +28,7 @@ function App() {
                     <Nav className="justify-content-end flex-grow-1 pe-3">
                         <Nav.Link href="/">ตรวจประวัติ</Nav.Link>
                         <Nav.Link href="/login">Login</Nav.Link>
-                        <Nav.Link href="/register">Register</Nav.Link>
+                        <Nav.Link href="/profile/:id">Register</Nav.Link>
                         
                     </Nav>
                     </Navbar.Collapse>
@@ -37,8 +37,8 @@ function App() {
       <Routes>
         <Route path='/home' element={<Home/>}/>
         <Route path='/' element={<Login/>}/>
-        <Route path='register' element={<Register/>}/>
-        {/* <Route path='/profile/:id' element={<Profile/>}/> */}
+        <Route path='/register' element={<Register/>}/>
+        <Route path='/profile/:id' element={<Profile/>}/>
         
       </Routes>
     </Router>

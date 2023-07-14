@@ -139,7 +139,7 @@ const Register = () => {
                 
                 <Row className=" m-2 d-flex justify-content-center">
                     <Col xs lg="2">
-                        <Button className='bg-secondary' type="submit" fullWidth variant="contained" sx={{ mt: 3, }}>
+                        <Button href='/' className='bg-secondary' type="submit" fullWidth variant="contained" sx={{ mt: 3, }}>
                         <p>Register</p> 
                         </Button>
                     </Col>

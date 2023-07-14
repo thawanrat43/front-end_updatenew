@@ -1,0 +1,2 @@
+
+351f7a47c35bdcd27cfd0951813bf27d7e4446dc	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/escalade","integrity":null,"time":1689321674725,"size":"0","metadata":{"time":1689321674725,"url":"http://registry.npmjs.org/escalade","reqHeaders":{"accept":"application/vnd.npm.install-v1+json; q=1.0, application/json; q=0.8, */*"},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Fri, 14 Jul 2023 08:01:14 GMT","location":"https://registry.npmjs.org/escalade","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}
