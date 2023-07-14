@@ -42,8 +42,6 @@ const Register = () => {
                 alert('register success')
                 
 
-            } else {
-                alert('register failed')
             }
         })      
         .catch ((error) => {
@@ -53,7 +51,6 @@ const Register = () => {
   }
   return (
     <div>
-      <Bar/>
       <Container fluid  className=' p-5 '>
             <div className='d-flex justify-content-center'>
                 <p className="fs-1" >Register</p>
