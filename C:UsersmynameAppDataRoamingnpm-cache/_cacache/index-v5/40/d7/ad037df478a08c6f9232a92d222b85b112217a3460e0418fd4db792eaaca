@@ -1,2 +1,0 @@
-
-9b02045caf239e79ce6652f23f62c0fe9a3dcec5	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/jackspeak","integrity":null,"time":1689321676792,"size":"0","metadata":{"time":1689321676792,"url":"http://registry.npmjs.org/jackspeak","reqHeaders":{"accept":"application/vnd.npm.install-v1+json; q=1.0, application/json; q=0.8, */*"},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Fri, 14 Jul 2023 08:01:16 GMT","location":"https://registry.npmjs.org/jackspeak","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

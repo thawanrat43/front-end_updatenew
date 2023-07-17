@@ -1,2 +1,0 @@
-
-b47d076277bc11861b0b0b1b285a506ed58a0d8c	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/aproba/-/aproba-2.0.0.tgz","integrity":null,"time":1689321683520,"size":"0","metadata":{"time":1689321683520,"url":"http://registry.npmjs.org/aproba/-/aproba-2.0.0.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Fri, 14 Jul 2023 08:01:23 GMT","location":"https://registry.npmjs.org/aproba/-/aproba-2.0.0.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

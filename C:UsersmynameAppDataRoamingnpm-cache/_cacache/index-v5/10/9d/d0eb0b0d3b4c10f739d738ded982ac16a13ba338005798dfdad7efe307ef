@@ -1,2 +1,0 @@
-
-71d6a6d2822f6e3d9a803ef54aa0b46f731aca31	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/npm-pick-manifest","integrity":null,"time":1689321674033,"size":"0","metadata":{"time":1689321674033,"url":"http://registry.npmjs.org/npm-pick-manifest","reqHeaders":{"accept":"application/vnd.npm.install-v1+json; q=1.0, application/json; q=0.8, */*"},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Fri, 14 Jul 2023 08:01:14 GMT","location":"https://registry.npmjs.org/npm-pick-manifest","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

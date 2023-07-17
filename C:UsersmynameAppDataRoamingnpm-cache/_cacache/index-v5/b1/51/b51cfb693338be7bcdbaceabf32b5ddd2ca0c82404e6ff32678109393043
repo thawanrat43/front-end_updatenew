@@ -1,2 +1,0 @@
-
-6fa4729d2d68d8fe1bab5187a29900f85f470991	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/ssri","integrity":null,"time":1689321674707,"size":"0","metadata":{"time":1689321674707,"url":"http://registry.npmjs.org/ssri","reqHeaders":{"accept":"application/vnd.npm.install-v1+json; q=1.0, application/json; q=0.8, */*"},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Fri, 14 Jul 2023 08:01:14 GMT","location":"https://registry.npmjs.org/ssri","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

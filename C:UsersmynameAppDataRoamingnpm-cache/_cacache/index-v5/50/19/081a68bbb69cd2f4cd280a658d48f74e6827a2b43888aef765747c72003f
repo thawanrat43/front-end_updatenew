@@ -1,2 +1,0 @@
-
-f44ff0049dbe9b8f8998d1bd8338d083e8f0d77c	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/is-extglob/-/is-extglob-2.1.1.tgz","integrity":null,"time":1689321762869,"size":"0","metadata":{"time":1689321762869,"url":"http://registry.npmjs.org/is-extglob/-/is-extglob-2.1.1.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Fri, 14 Jul 2023 08:02:42 GMT","location":"https://registry.npmjs.org/is-extglob/-/is-extglob-2.1.1.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

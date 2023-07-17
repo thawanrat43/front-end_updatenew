@@ -22,7 +22,7 @@ const Login = () => {
         password: data.get('password'),
     };
     const token = localStorage.getItem('token')
-    fetch("https://successful-handbag-toad.cyclic.app/login", {
+    fetch("http://localhost:3333//login", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -40,10 +40,6 @@ const Login = () => {
             alert('login failed')
         }
     })      
-    .catch ((error) => {
-      console.error("Error:", error);
-        
-    });
     
   };
   return (

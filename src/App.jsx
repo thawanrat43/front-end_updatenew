@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './page/Home'
 import Login from './page/Login'
 import Register from './page/Register';
-// import Profile from './page/profile';
+import Profile from './page/Profile';
 // import Code from './page/Code';
 // import Pagestatus from './page/Pagestatus';
 // import History from './page/History';
@@ -28,15 +28,15 @@ function App() {
                     <Nav className="justify-content-end flex-grow-1 pe-3">
                         <Nav.Link href="/">ตรวจประวัติ</Nav.Link>
                         <Nav.Link href="/login">Login</Nav.Link>
-                        <Nav.Link href="/profile/:id">Register</Nav.Link>
+                        <Nav.Link href="/register">Register</Nav.Link>
                         
                     </Nav>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
       <Routes>
-        <Route path='/home' element={<Home/>}/>
-        <Route path='/' element={<Login/>}/>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/login' element={<Login/>}/>
         <Route path='/register' element={<Register/>}/>
         <Route path='/profile/:id' element={<Profile/>}/>
         

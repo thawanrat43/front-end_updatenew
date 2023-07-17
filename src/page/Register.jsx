@@ -29,7 +29,7 @@ const Register = () => {
 
         };
 
-        fetch("https://successful-handbag-toad.cyclic.app/register", {
+        fetch("http://localhost:3333/register", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

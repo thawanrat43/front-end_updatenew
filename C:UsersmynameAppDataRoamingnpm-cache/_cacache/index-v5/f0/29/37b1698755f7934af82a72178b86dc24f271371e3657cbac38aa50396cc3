@@ -1,2 +1,0 @@
-
-0ffcd5bb3c46bef9c60ba3ce4c33cb3e9774aa54	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/err-code/-/err-code-2.0.3.tgz","integrity":null,"time":1689321683507,"size":"0","metadata":{"time":1689321683507,"url":"http://registry.npmjs.org/err-code/-/err-code-2.0.3.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Fri, 14 Jul 2023 08:01:23 GMT","location":"https://registry.npmjs.org/err-code/-/err-code-2.0.3.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

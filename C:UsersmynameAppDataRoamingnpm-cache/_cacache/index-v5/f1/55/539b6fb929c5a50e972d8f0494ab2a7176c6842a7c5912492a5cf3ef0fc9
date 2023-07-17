@@ -1,2 +1,0 @@
-
-bbe0ddb144372ada51bdf9f8c1183d7b8aa58e52	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/chardet","integrity":null,"time":1689321675385,"size":"0","metadata":{"time":1689321675385,"url":"http://registry.npmjs.org/chardet","reqHeaders":{"accept":"application/vnd.npm.install-v1+json; q=1.0, application/json; q=0.8, */*"},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Fri, 14 Jul 2023 08:01:15 GMT","location":"https://registry.npmjs.org/chardet","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

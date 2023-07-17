@@ -1,2 +1,0 @@
-
-03174af419f0214d1aece9b19f27c36f7e08a549	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/hosted-git-info/-/hosted-git-info-6.1.1.tgz","integrity":null,"time":1689321684025,"size":"0","metadata":{"time":1689321684025,"url":"http://registry.npmjs.org/hosted-git-info/-/hosted-git-info-6.1.1.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Fri, 14 Jul 2023 08:01:24 GMT","location":"https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-6.1.1.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}
