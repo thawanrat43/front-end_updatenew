@@ -1,0 +1,2 @@
+
+8889c24704c4d6c89180c9d40153fbf526a21a5a	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/body-parser/-/body-parser-1.20.2.tgz","integrity":null,"time":1690189039738,"size":"0","metadata":{"time":1690189039737,"url":"http://registry.npmjs.org/body-parser/-/body-parser-1.20.2.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Mon, 24 Jul 2023 08:57:19 GMT","location":"https://registry.npmjs.org/body-parser/-/body-parser-1.20.2.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

@@ -12,42 +12,38 @@ import Barprofile from '../compament/Barprofile';
 import { key } from 'localforage';
 import { SettingsRemoteSharp } from '@mui/icons-material';
 import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
-const Profile = () => {
-    const [user, setUser] = useState(null);
-    const { userId } = useParams();
-    const token = useSelector((state) => state.token);
-    event.preventDefault();
-        const data = new FormData(event.currentTarget);
-        const jsondata = {
-            email: data.get('email'),
-            fname: data.get('firstName'),
-            lname: data.get('lastName'),
-            username : data.get('username'),
-            phonenum : data.get('phonenum')
-            
+import { useLocation, useParams } from "react-router-dom";
+import axios from "axios"
+import {useNavigate} from "react-router-dom"
+import { useContext } from "react";
+import { useQuery, useQueryClient, useMutation } from '@tanstack/react-query';
+const Profile = ({}) => {
+    const [user,setuser] = useState([])
+    // const [user,setuser] = useEffect([])
+    const [openUpdate, setOpenUpdate] = useState(false);
+    const { currentUser } = useContext(AuthContext);
 
-        };
-    const getUser = async () => {
-        const response = await fetch(`http://localhost:3333/profile/{userId}`, {
-          method: "GET",
-          headers: { Authorization: `Bearer ${token}` },
-        });
-        const data = await response.json();
-        setUser(data);
-      };
-    
-    useEffect(() => {
-        getUser();   
-    },[])  
-    if (!user) return null;
+    const userId = parseInt(useLocation().pathname.split("/")[2]);
+
+    const { isLoading, error, data } = useQuery(["user"], () =>
+        makeRequest.get("/users/find/" + userId).then((res) => {
+        return res.data;
+        })
+    );
+
+    const { isLoading: rIsLoading, data: relationshipData } = useQuery(
+        ["relationship"],
+        () =>
+        makeRequest.get("/relationships?followedUserId=" + userId).then((res) => {
+            return res.data;
+        })
+    );
+
+    const queryClient = useQueryClient();
+
     return (
         <div>
-            <Barprofile/>
             <Container >
-                {attraction.map (attractions=> 
-                    <p key={attraction.id}>{attraction.username}</p>
-                )}
                 <div className='d-flex p-5'>
                     <Card style={{ width: '18rem'  }} className='m-5'>
                         <Card.Body>
@@ -58,7 +54,7 @@ const Profile = () => {
                             </Row>
                             <Row className='p-3'>
                                 <Button variant="secondary" size="lg">
-                                    ประวัติส่วนตัว
+                                    ประวัติส่วนตัว 
                                 </Button>
                             
                             </Row>
@@ -73,7 +69,7 @@ const Profile = () => {
                     </Card>
                     <div className='pl-5'>
                         <div className='mb-4 mt-5'>
-                            <p1 >ประวัติส่วนตัว</p1>
+                            <span>ประวัติส่วนตัว</span>
                         </div>
                         
                         <div>
@@ -81,7 +77,7 @@ const Profile = () => {
                                 <Col>
                                     <Form.Control
                                             type="text"
-                                            placeholder="ชื่อผู้ใช้"
+                                            placeholder={user.username}
                                             aria-label="Disabled input example"
                                             disabled
                                             readOnly
@@ -95,7 +91,7 @@ const Profile = () => {
                                 <Col>
                                     <Form.Control
                                             type="text"
-                                            placeholder="ชื่อ"
+                                            placeholder={user.fname}
                                             aria-label="Disabled input example"
                                             disabled
                                             readOnly
@@ -105,7 +101,7 @@ const Profile = () => {
                                 <Col>
                                     <Form.Control
                                             type="text"
-                                            placeholder="นามสกุล"
+                                            placeholder={user.lanme}
                                             aria-label="Disabled input example"
                                             disabled
                                             readOnly
@@ -118,7 +114,7 @@ const Profile = () => {
                                 <Col>
                                     <Form.Control
                                             type="text"
-                                            placeholder="หมายเลขโทศัพท์"
+                                            placeholder={user.phonenum}
                                             aria-label="Disabled input example"
                                             disabled
                                             readOnly
@@ -131,7 +127,7 @@ const Profile = () => {
                                 <Col>
                                     <Form.Control
                                             type="text"
-                                            placeholder="E-mail"
+                                            placeholder={user.email}
                                             aria-label="Disabled input example"
                                             disabled
                                             readOnly

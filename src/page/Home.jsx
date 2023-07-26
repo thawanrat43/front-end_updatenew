@@ -28,46 +28,42 @@ const Home =() =>{
     //         });
     // }, []);
         
-    const handlelogout =(event)=>{
-        event.preventDefault();
-        // localStorage.removeItem('token');
-        // window.location='/login'
-    }
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        const data = new FormData(event.currentTarget);
-        const jsondata = {
-            fname: data.get('firstName'),
-            lname: data.get('lastName'),
-            idnumber : data.get('idnumber'),
-            type_id : data.get('type_id')
+    
+    // const handleSubmit = (event) => {
+    //     event.preventDefault();
+    //     const data = new FormData(event.currentTarget);
+    //     const jsondata = {
+    //         fname: data.get('firstName'),
+    //         lname: data.get('lastName'),
+    //         idnumber : data.get('idnumber'),
+    //         type_id : data.get('type_id')
 
             
 
-        };
+    //     };
 
-        fetch("http://localhost:3333/home", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(jsondata),
-        })
-        .then(response => response.json()) 
-        .then(data => {
-            if (data.status === 'ok'){
-                alert('register success')
+    //     fetch("http://localhost:3333/profile", {
+    //         method: "POST",
+    //         headers: {
+    //             "Content-Type": "application/json",
+    //         },
+    //         body: JSON.stringify(jsondata),
+    //     })
+    //     .then(response => response.json()) 
+    //     .then(data => {
+    //         if (data.status === 'ok'){
+    //             alert('register success')
                 
 
-            } else {
-                alert('register failed')
-            }
-        })      
-        .catch ((error) => {
-        console.error("Error:", error);
+    //         } else {
+    //             alert('register failed')
+    //         }
+    //     })      
+    //     .catch ((error) => {
+    //     console.error("Error:", error);
             
-        });
-    }
+    //     });
+    // }
     return (
                 
           <div className="d-flex justify-content-center m-5">
@@ -161,7 +157,7 @@ const Home =() =>{
                             </div>
                             <Row className=" m-2 d-flex justify-content-center">
                                 <Col xs lg="2">
-                                    <Button className='bg-secondary' type="submit" fullWidth variant="contained" sx={{ mt: 3, }} onClick={handlelogout}>
+                                    <Button className='bg-secondary' type="submit" fullWidth variant="contained" sx={{ mt: 3, }} href="/profile">
                                     <p>ยืนยัน</p> 
                                     </Button>
                                 </Col>

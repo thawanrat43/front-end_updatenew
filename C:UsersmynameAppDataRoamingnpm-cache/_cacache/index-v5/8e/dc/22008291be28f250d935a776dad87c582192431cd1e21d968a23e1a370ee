@@ -1,0 +1,2 @@
+
+89360adb6ea43df35d8f4f39226848067ae818b5	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/@types/multer/-/multer-1.4.7.tgz","integrity":null,"time":1689836723449,"size":"0","metadata":{"time":1689836723449,"url":"http://registry.npmjs.org/@types/multer/-/multer-1.4.7.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 20 Jul 2023 07:05:23 GMT","location":"https://registry.npmjs.org/@types/multer/-/multer-1.4.7.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

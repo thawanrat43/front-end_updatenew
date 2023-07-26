@@ -8,16 +8,29 @@ import Profile from './page/Profile';
 // import Code from './page/Code';
 // import Pagestatus from './page/Pagestatus';
 // import History from './page/History';
-// import Pay from './page/Pay';
+import Pay from './page/Pay';
 // import Qrcode from './page/Qrcode';
 // import Finish from './page/Finish';
-import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Link, Routes, Navigate} from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import {useParams} from 'react-router-dom';
+import {useParams } from 'react-router-dom';
+import { useState } from 'react';
+
 function App() {
-  let {id} =useParams()
+  const [login,setlogin] = useState(null)
+  function handlelogin(){
+    setlogin(true)
+  }
+  function handlelogout(){
+    setlogin(false)
+  }
+  const logout =(event)=>{
+    event.preventDefault();
+    localStorage.removeItem('token');
+    window.location='/login'
+}
   return (
     <Router>
       <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
@@ -29,17 +42,19 @@ function App() {
                         <Nav.Link href="/">ตรวจประวัติ</Nav.Link>
                         <Nav.Link href="/login">Login</Nav.Link>
                         <Nav.Link href="/register">Register</Nav.Link>
-                        
+                        <Nav.Link onClick={logout}>logout</Nav.Link>
                     </Nav>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
       <Routes>
-        <Route path='/' element={<Home/>}/>
+        <Route path='/' element={ login ? <Navigate to="/pay" /> : <Home login={handlelogin}/>} />
         <Route path='/login' element={<Login/>}/>
         <Route path='/register' element={<Register/>}/>
-        <Route path='/profile/:id' element={<Profile/>}/>
-        
+        {/* <Route path='/profile' >
+          <Route path=':userid' element={<Profile/>}/>
+        </Route> */}
+        <Route path='/profile' element={<Profile/>}/>
       </Routes>
     </Router>
    

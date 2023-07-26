@@ -1,0 +1,2 @@
+
+596f8bad6bff9d4f602787d31b86467802850833	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/moment-timezone","integrity":null,"time":1689732572148,"size":"0","metadata":{"time":1689732572148,"url":"http://registry.npmjs.org/moment-timezone","reqHeaders":{"accept":"application/vnd.npm.install-v1+json; q=1.0, application/json; q=0.8, */*"},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Wed, 19 Jul 2023 02:09:32 GMT","location":"https://registry.npmjs.org/moment-timezone","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

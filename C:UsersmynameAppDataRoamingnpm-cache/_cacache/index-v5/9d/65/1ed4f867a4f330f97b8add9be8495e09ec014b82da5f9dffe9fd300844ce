@@ -1,0 +1,2 @@
+
+459653753144eb6f8c8269197bad55fc2d55f768	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/typedarray/-/typedarray-0.0.6.tgz","integrity":null,"time":1689836782679,"size":"0","metadata":{"time":1689836782679,"url":"http://registry.npmjs.org/typedarray/-/typedarray-0.0.6.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 20 Jul 2023 07:06:22 GMT","location":"https://registry.npmjs.org/typedarray/-/typedarray-0.0.6.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

@@ -1,0 +1,2 @@
+
+1d4539e0725f64e833d0917d54dc584b5d8a2624	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/fs-extra","integrity":null,"time":1689741092527,"size":"0","metadata":{"time":1689741092527,"url":"http://registry.npmjs.org/fs-extra","reqHeaders":{"accept":"application/vnd.npm.install-v1+json; q=1.0, application/json; q=0.8, */*"},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Wed, 19 Jul 2023 04:31:32 GMT","location":"https://registry.npmjs.org/fs-extra","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

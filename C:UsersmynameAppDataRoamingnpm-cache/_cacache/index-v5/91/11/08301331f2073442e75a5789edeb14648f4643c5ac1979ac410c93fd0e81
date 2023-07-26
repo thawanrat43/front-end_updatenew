@@ -1,0 +1,2 @@
+
+14402cd7e53fd00cc6c1ac2f436c17f89ac8db22	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/localforage","integrity":null,"time":1689582350866,"size":"0","metadata":{"time":1689582350866,"url":"http://registry.npmjs.org/localforage","reqHeaders":{"accept":"application/json"},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Mon, 17 Jul 2023 08:25:51 GMT","location":"https://registry.npmjs.org/localforage","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

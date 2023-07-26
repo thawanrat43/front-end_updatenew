@@ -1,0 +1,2 @@
+
+ccb84d9a3b6af161996445832f5cc09e43a4f944	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/@types%2fbluebird","integrity":null,"time":1689674873569,"size":"0","metadata":{"time":1689674873569,"url":"http://registry.npmjs.org/@types%2fbluebird","reqHeaders":{"accept":"application/vnd.npm.install-v1+json; q=1.0, application/json; q=0.8, */*"},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Tue, 18 Jul 2023 10:07:53 GMT","location":"https://registry.npmjs.org/@types%2Fbluebird","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

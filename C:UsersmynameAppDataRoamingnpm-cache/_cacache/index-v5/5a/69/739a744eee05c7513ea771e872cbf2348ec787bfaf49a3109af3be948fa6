@@ -1,0 +1,2 @@
+
+d7147feb615ede4d38a86aeff177e02f4871a26b	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/@types/bluebird/-/bluebird-3.5.38.tgz","integrity":null,"time":1689674873789,"size":"0","metadata":{"time":1689674873789,"url":"http://registry.npmjs.org/@types/bluebird/-/bluebird-3.5.38.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Tue, 18 Jul 2023 10:07:53 GMT","location":"https://registry.npmjs.org/@types/bluebird/-/bluebird-3.5.38.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

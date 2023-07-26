@@ -1,0 +1,2 @@
+
+66fa31098bf375f99200f2ddde5983db87a5f4d0	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/@types/mysql/-/mysql-2.15.21.tgz","integrity":null,"time":1690249619980,"size":"0","metadata":{"time":1690249619980,"url":"http://registry.npmjs.org/@types/mysql/-/mysql-2.15.21.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Tue, 25 Jul 2023 01:47:00 GMT","location":"https://registry.npmjs.org/@types/mysql/-/mysql-2.15.21.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

@@ -1,0 +1,2 @@
+
+c001472bd93234a8386542fe2d08a0aa4981d36f	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/inflection/-/inflection-1.13.4.tgz","integrity":null,"time":1689732573483,"size":"0","metadata":{"time":1689732573483,"url":"http://registry.npmjs.org/inflection/-/inflection-1.13.4.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Wed, 19 Jul 2023 02:09:33 GMT","location":"https://registry.npmjs.org/inflection/-/inflection-1.13.4.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}
