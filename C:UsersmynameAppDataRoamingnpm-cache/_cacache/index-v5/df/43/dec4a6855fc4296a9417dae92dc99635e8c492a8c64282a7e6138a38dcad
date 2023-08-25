@@ -1,2 +1,0 @@
-
-12fd57df73a733a1829fa3acc5abaefb0a2f44a5	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/uid-safe/-/uid-safe-2.1.5.tgz","integrity":null,"time":1690251014341,"size":"0","metadata":{"time":1690251014341,"url":"http://registry.npmjs.org/uid-safe/-/uid-safe-2.1.5.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Tue, 25 Jul 2023 02:10:14 GMT","location":"https://registry.npmjs.org/uid-safe/-/uid-safe-2.1.5.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

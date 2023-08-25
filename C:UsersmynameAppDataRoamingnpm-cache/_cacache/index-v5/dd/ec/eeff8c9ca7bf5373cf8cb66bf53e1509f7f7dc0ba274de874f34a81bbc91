@@ -1,2 +1,0 @@
-
-3810ae3581d8618ff502f28b0f953336251f9545	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/@types/sequelize/-/sequelize-4.28.15.tgz","integrity":null,"time":1689674873784,"size":"0","metadata":{"time":1689674873784,"url":"http://registry.npmjs.org/@types/sequelize/-/sequelize-4.28.15.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Tue, 18 Jul 2023 10:07:53 GMT","location":"https://registry.npmjs.org/@types/sequelize/-/sequelize-4.28.15.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

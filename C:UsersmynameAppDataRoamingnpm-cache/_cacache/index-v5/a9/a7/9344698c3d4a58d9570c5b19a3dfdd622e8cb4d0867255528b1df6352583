@@ -1,2 +1,0 @@
-
-293bf31945beb54e718f362c686e4f712828df19	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/sequelize-pool","integrity":null,"time":1689732572140,"size":"0","metadata":{"time":1689732572140,"url":"http://registry.npmjs.org/sequelize-pool","reqHeaders":{"accept":"application/vnd.npm.install-v1+json; q=1.0, application/json; q=0.8, */*"},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Wed, 19 Jul 2023 02:09:32 GMT","location":"https://registry.npmjs.org/sequelize-pool","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

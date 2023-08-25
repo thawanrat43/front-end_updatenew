@@ -1,2 +1,0 @@
-
-0a40a1b12ff0cb9353496a1202359ca626835ac7	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/typedarray","integrity":null,"time":1689836782414,"size":"0","metadata":{"time":1689836782414,"url":"http://registry.npmjs.org/typedarray","reqHeaders":{"accept":"application/vnd.npm.install-v1+json; q=1.0, application/json; q=0.8, */*"},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 20 Jul 2023 07:06:22 GMT","location":"https://registry.npmjs.org/typedarray","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

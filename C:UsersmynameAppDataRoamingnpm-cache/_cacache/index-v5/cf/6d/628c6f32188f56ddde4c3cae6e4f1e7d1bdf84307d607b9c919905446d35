@@ -1,2 +1,0 @@
-
-fbefeff6d85b2c6a2571094dee92d517307e3bbe	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/match-sorter","integrity":null,"time":1689582351044,"size":"0","metadata":{"time":1689582351043,"url":"http://registry.npmjs.org/match-sorter","reqHeaders":{"accept":"application/json"},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Mon, 17 Jul 2023 08:25:51 GMT","location":"https://registry.npmjs.org/match-sorter","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

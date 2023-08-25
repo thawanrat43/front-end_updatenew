@@ -11,59 +11,65 @@ import Box from '@mui/material/Box';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
-import Link from '@mui/material/Link';
+import { Link } from "react-router-dom";
 import Barprofile from "../compament/Barprofile";
 import TextField from '@mui/material/TextField';
 import {useParams} from 'react-router-dom';
 import axios from "axios";
 
 const Home =() =>{
-    // const [listOfPosts, setListOfPosts] = useState([]);
-    // let history = useHistory();
-
+    const { userid }  = useParams();
+    const [inputs,setInputs] = useState({
+        fname: "",
+        lname: "",
+        idcard: "",
+        type_id: "",
+        criminal: "",
+        bankrupt: "",
+        credit: "",
+        penalty: "",
+        global: "",
+        other_text: ""
+    })
+    const [err, setErr] = useState(null);
+    const [user ,setUser] = useState([]);
+    const getdata = async ()=>{
+        try{
+            const response = await axios.get(`http://localhost:3333/profile/${userid}`);
+            setUser(response.data);
+        } catch (err) {
+            console.log(err);
+        }
+    }
+    useEffect(() => {
+            
+        getdata();
+       
+    }, []);
+    const handleChange = (e) => {
+        setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    };
+    const handleChangecheck = (e) => {
+        setInputs((prev) => ({ ...prev, [e.target.name]: e.target.checked }));
+	};
+    const handleClick = async (e) => {
+        e.preventDefault();
     
-    // useEffect(() => {
-    //     axios.get("http://localhost:3306/home").then((response) => {
-    //         setListOfPosts(response.data);
-    //         });
-    // }, []);
+        try {
+          await axios.post(`http://localhost:3333/home/${userid}`, inputs)
+          .then((response) => {
+            if (response.data.error) {
+                alert(response.data.error);
+            }else{
+                console.log(inputs)
+            }
+            });
+        } catch (err) {
+          setErr(err.response.data);
+          console.log(err)
+        }
         
-    
-    // const handleSubmit = (event) => {
-    //     event.preventDefault();
-    //     const data = new FormData(event.currentTarget);
-    //     const jsondata = {
-    //         fname: data.get('firstName'),
-    //         lname: data.get('lastName'),
-    //         idnumber : data.get('idnumber'),
-    //         type_id : data.get('type_id')
-
-            
-
-    //     };
-
-    //     fetch("http://localhost:3333/profile", {
-    //         method: "POST",
-    //         headers: {
-    //             "Content-Type": "application/json",
-    //         },
-    //         body: JSON.stringify(jsondata),
-    //     })
-    //     .then(response => response.json()) 
-    //     .then(data => {
-    //         if (data.status === 'ok'){
-    //             alert('register success')
-                
-
-    //         } else {
-    //             alert('register failed')
-    //         }
-    //     })      
-    //     .catch ((error) => {
-    //     console.error("Error:", error);
-            
-    //     });
-    // }
+    };
     return (
                 
           <div className="d-flex justify-content-center m-5">
@@ -71,32 +77,32 @@ const Home =() =>{
                 <p className="fs-5">กรอกประวัติของผู้ที่ต้องการตรวจสอบ</p>
                     <Row>
                                 <Col>
-                                    <Form.Select id="type_id" aria-label="Default select example" size="lg" className="mt-1">
+                                    <Form.Select id="type_id" name="type_id" aria-label="Default select example" size="lg" className="mt-1" onChange={handleChange}>
                                         <option>คำนำหน้า</option>
-                                        <option value="1">นาย</option>
-                                        <option value="2">นาง</option>
-                                        <option value="3">นางสาว</option>
+                                        <option value="นาย">นาย</option>
+                                        <option value="นาง">นาง</option>
+                                        <option value="นางสาว">นางสาว</option>
                                     </Form.Select>            
                                 </Col>
                                 <Col>
                                     <TextField
-                                    autoComplete="given-name"
-                                    name="firstName"
-                                    required
+                                    name="fname"
                                     fullWidth
-                                    id="firstName"
-                                    label="First Name"
+                                    id="fname"
+                                    label="ชื่อ"
                                     autoFocus
+                                    onChange={handleChange}
                                     />
                                 </Col>
                                 <Col>
                                     <TextField
-                                    required
+                                    
                                     fullWidth
-                                    id="lastName"
-                                    label="Last Name"
-                                    name="lastName"
+                                    id="lname"
+                                    label="นามสกุล"
+                                    name="lname"
                                     autoComplete="family-name"
+                                    onChange={handleChange}
                                     />
                                 </Col>      
                             </Row>
@@ -104,12 +110,13 @@ const Home =() =>{
                             <Row>
                             <Col>
                                 <TextField
-                                required
+                                
                                 fullWidth
-                                id="idnumber"
+                                id="idcard"
                                 label="หมายเลขบัตรประจำตัวประชาชน"
-                                name="idnumber"
-                                autoComplete="idnumber"
+                                name="idcard"
+                                autoComplete="idcard"
+                                onChange={handleChange}
                                 />  
                             </Col>
                             
@@ -118,51 +125,68 @@ const Home =() =>{
                             <div className="m-5">
                                 <p className="m-2 d-flex justify-content-center fs-5">ต้องการตรวจสอบประวัติ</p>
                                 <br/>
-                                <Row className="m-2 d-flex justify-content-center">
-                                    <Col>
-                                        <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                                        <Form.Check type="checkbox" label="ตรวจสอบประวัติอาชญากร" />
-                                        </Form.Group>
-                                    </Col>
-                                    <Col>
-                                        <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                                        <Form.Check type="checkbox" label="ตรวจเครดิตบูโร" />
-                                        </Form.Group>
-                                    </Col>
-                                </Row>
-                                <Row className="m-2 d-flex justify-content-center">
-                                    <Col>
-                                        <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                                        <Form.Check type="checkbox" label="ตรวจคดีล้มละลาย" />
-                                        </Form.Group>
-                                    </Col>
-                                    <Col>
-                                        <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                                        <Form.Check type="checkbox" label="ตรวจคดีอาญา" />
-                                        </Form.Group>
-                                    </Col>
-                                </Row>
-                                <Row className="m-2 d-flex justify-content-center">
-                                    <Col>
-                                        <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                                        <Form.Check type="checkbox" label="ตรวจglobal sanction" />
-                                        </Form.Group>
-                                    </Col>
-                                    <Col>
-                                        <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                                        <Form.Check type="checkbox" label="อื่นๆ" />
-                                        </Form.Group>
-                                    </Col>
-                                </Row>
+                                <Form>
+                                    <Row className="m-2 d-flex justify-content-center">
+                                        <Col>
+                                            
+                                        
+                                            <Form.Check type="checkbox" id="criminal" name="criminal"  label="ตรวจสอบประวัติอาชญากร"onChange={handleChangecheck} />
+                                        
+                                        </Col>
+                                        <Col>
+                                            
+                                            <Form.Check type="checkbox" id="credit"label="ตรวจเครดิตบูโร" name="credit" onChange={handleChangecheck}/>
+                                            
+                                        </Col>
+                                    </Row>
+                                    <Row className="m-2 d-flex justify-content-center">
+                                        <Col>
+                                            
+                                            <Form.Check type="checkbox" id="bankrupt" label="ตรวจคดีล้มละลาย" name="bankrupt" onChange={handleChangecheck}/>
+                                            
+                                        </Col>
+                                        <Col>
+                                            
+                                            <Form.Check type="checkbox" id="penalty"label="ตรวจคดีอาญา" name="penalty" onChange={handleChangecheck}  />
+                                            
+                                        </Col>
+                                    </Row>
+                                    <Row className="m-2 d-flex justify-content-center">
+                                        <Col>
+                                            
+                                            <Form.Check type="checkbox"  label="ตรวจglobal sanctions" id="global" name="global"  onChange={handleChangecheck}  />
+                                            
+                                        </Col>
+                                        <Col>
+                                            <TextField
+                                            name="other_text"
+                                            fullWidth
+                                            id="other_text"
+                                            label="อื่นๆ"
+                                            autoFocus
+                                            onChange={handleChange}
+                                            />
+                                        </Col>
+                                    </Row>
+                                </Form>
+                                
                             </div>
-                            <Row className=" m-2 d-flex justify-content-center">
-                                <Col xs lg="2">
-                                    <Button className='bg-secondary' type="submit" fullWidth variant="contained" sx={{ mt: 3, }} href="/profile">
-                                    <p>ยืนยัน</p> 
-                                    </Button>
-                                </Col>
+                            <Row >
+                                {user.map((users,key8)=>
+                                 <div className=" m-2 d-flex justify-content-center">
+                                    <Col xs lg="2">
+                                        <Link to={`/adminhistory/${users.userid}`}>
+                                            <Button  className='bg-secondary' type="submit" fullWidth variant="contained" sx={{ mt: 3, }} onClick={handleClick}>
+                                            <p>ยืนยัน</p> 
+                                            </Button>
+                                        </Link>
+                                        
+                                    </Col>
+                                 </div>
+                                )}
+                                
                             </Row>  
-                        </Container>
+                        </Container>     
                     </div>
         
             

@@ -1,2 +1,0 @@
-
-224af1262b5bda175205a15d943e144d17c703aa	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/uid-safe","integrity":null,"time":1690251013163,"size":"0","metadata":{"time":1690251013162,"url":"http://registry.npmjs.org/uid-safe","reqHeaders":{"accept":"application/vnd.npm.install-v1+json; q=1.0, application/json; q=0.8, */*"},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Tue, 25 Jul 2023 02:10:13 GMT","location":"https://registry.npmjs.org/uid-safe","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

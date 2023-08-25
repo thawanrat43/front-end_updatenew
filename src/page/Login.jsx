@@ -16,8 +16,8 @@ import { Navigate, useParams } from "react-router-dom";
 import {useNavigate} from "react-router-dom"
 import axios from "axios";
 import { useState } from 'react';
-import {AuthContext} from '../context/Context'
 const Login = () => {
+    const [user,setUser] =useState({})
     const [inputs,setInputs] = useState({
         email: "",
         password: ""
@@ -27,17 +27,25 @@ const Login = () => {
     const handleChange = (e) => {
         setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
     };
-    const { login } = useContext(AuthContext);
-
+    // const { login } = useContext(AuthContext);
+    axios.defaults.withCredentials = true;
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
             await axios.post("http://localhost:3333/login", inputs);
-            // await login(inputs);
-            navigate("/profile")
+            if(err){
+                alert('login failed')
+                
+            }
+            else{
+                alert('login success')
+                
+            }    
         } catch (err) {
           setErr(err.response.data);
+          alert('faild')
         }
+        
     };
     
     return (
@@ -47,7 +55,7 @@ const Login = () => {
                 <div className='d-flex justify-content-center'>
                     <p className="fs-1">Login</p>
                 </div>
-                <Box className='m-5' component="form" noValidate  sx={{ mt: 1 }}>
+                <Box className='m-5' component="form" noValidate  sx={{ mt: 1 }} >
                     <TextField
                         margin="normal"
                         required

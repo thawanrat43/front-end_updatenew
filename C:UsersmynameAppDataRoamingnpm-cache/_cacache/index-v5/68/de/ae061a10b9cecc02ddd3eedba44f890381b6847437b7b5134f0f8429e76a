@@ -1,2 +1,0 @@
-
-1fb23317658a552a9470506ee2f53840801b4fa1	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/wkx/-/wkx-0.5.0.tgz","integrity":null,"time":1689732573479,"size":"0","metadata":{"time":1689732573479,"url":"http://registry.npmjs.org/wkx/-/wkx-0.5.0.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Wed, 19 Jul 2023 02:09:33 GMT","location":"https://registry.npmjs.org/wkx/-/wkx-0.5.0.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

@@ -1,6 +1,6 @@
 import React,{useEffect, useState} from 'react'
 import Bar from '../compament/Bar'
-import Button from 'react-bootstrap/Button';
+import { Button } from '@mui/material';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
@@ -12,141 +12,203 @@ import Barprofile from '../compament/Barprofile';
 import { key } from 'localforage';
 import { SettingsRemoteSharp } from '@mui/icons-material';
 import { useSelector } from "react-redux";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation, useParams,Link } from "react-router-dom";
 import axios from "axios"
 import {useNavigate} from "react-router-dom"
 import { useContext } from "react";
 import { useQuery, useQueryClient, useMutation } from '@tanstack/react-query';
+import TextField from '@mui/material/TextField';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 const Profile = ({}) => {
-    const [user,setuser] = useState([])
-    // const [user,setuser] = useEffect([])
-    const [openUpdate, setOpenUpdate] = useState(false);
-    const { currentUser } = useContext(AuthContext);
-
-    const userId = parseInt(useLocation().pathname.split("/")[2]);
-
-    const { isLoading, error, data } = useQuery(["user"], () =>
-        makeRequest.get("/users/find/" + userId).then((res) => {
-        return res.data;
-        })
-    );
-
-    const { isLoading: rIsLoading, data: relationshipData } = useQuery(
-        ["relationship"],
-        () =>
-        makeRequest.get("/relationships?followedUserId=" + userId).then((res) => {
-            return res.data;
-        })
-    );
-
-    const queryClient = useQueryClient();
-
+    const [ auth , setAuth] = useState(false);
+    const [user ,setUser] = useState([]);
+    const navigate = useNavigate();
+    const [hasError, setErrors] = useState([]);
+    const location = useLocation();
+    const { userid }  =useParams();
+    
+    const logout =(event)=>{
+        event.preventDefault();
+        localStorage.removeItem('token');
+        window.location='/login'
+    }
+    const getdata = async ()=>{
+        try{
+            const response = await axios.get(`http://localhost:3333/profile/${userid}`);
+            setUser(response.data);
+        } catch (err) {
+            console.log(err);
+        }
+    }
+    useEffect(() => {
+            
+        getdata();
+       
+    }, []);
+    const navStyle = {
+        lineHeight: "1.5",
+        border: "none",
+        color: "#708090"
+    
+    }
+    console.log(user); 
     return (
         <div>
-            <Container >
-                <div className='d-flex p-5'>
-                    <Card style={{ width: '18rem'  }} className='m-5'>
-                        <Card.Body>
-                            <Row>
-                            <Col xs={6} md={4}> 
-                                <Image src="./public/10.webp" roundedCircle style={{width : '16rem'}} />
-                            </Col>
-                            </Row>
-                            <Row className='p-3'>
-                                <Button variant="secondary" size="lg">
-                                    ประวัติส่วนตัว 
-                                </Button>
+        {user.map((users,i)=>(   
+            <div key={i}>
+                <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+                    <Container>
+                            <Link to={`/${userid}`}>
+                                <Navbar.Brand >CHECK</Navbar.Brand>
+                            </Link>
                             
-                            </Row>
-                            <Row className='p-3'>
-                                <Button variant="secondary" size="lg">
-                                    เปลี่ยนรหัสผ่าน
-                                </Button>
+                            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                            <Navbar.Collapse id="responsive-navbar-nav">
+                            <Nav className="justify-content-end flex-grow-1 pe-3 ">
+                            <Link to={`/${userid}`} className='mr-2' style={{ textDecoration: 'none' }}>
+                                <Navbar style={navStyle} >ตรวจประวัติ</Navbar>
+                            </Link>
+                            <Link to={`/pagestatus/${userid}`} style={{ textDecoration: 'none' }}>
+                                <Navbar style={navStyle} >สถานะการตรวจประวัติ</Navbar>
+                            </Link>
                             
-                            </Row>
+                            {/* <Nav.Link href="/login">Login</Nav.Link>
+                                <Nav.Link href="/register">Register</Nav.Link> */}
+                            <Nav.Link onClick={logout}>logout</Nav.Link>
+                            </Nav>
+                        </Navbar.Collapse>
+                    </Container>
+                </Navbar>
+                <Container >
+                    
+                        <div  className='d-flex p-5'>
                             
-                        </Card.Body>
-                    </Card>
-                    <div className='pl-5'>
-                        <div className='mb-4 mt-5'>
-                            <span>ประวัติส่วนตัว</span>
-                        </div>
-                        
-                        <div>
-                            <Row>
-                                <Col>
-                                    <Form.Control
-                                            type="text"
-                                            placeholder={user.username}
-                                            aria-label="Disabled input example"
-                                            disabled
-                                            readOnly
-                                    />
+                            <Card style={{ width: '18rem'  }} className='m-5'>
+                                <Card.Body>
+                                    <Row>
+                                    <Col  xs={6} md={4}> 
+                                            <Image src={"http://localhost:3333/"+users.profilepic}roundedCircle style={{width : '16rem'}} />
+                                        </Col>
+                                    </Row>
+                                    <Row className='p-3'>
+                                            <Link to={`/profile/${userid}`}>
+                                                <Button className='bg-secondary'  type="submit" fullWidth variant="contained"  sx={{ mt: 3 }}>
+                                                    ประวัติส่วนตัว
+                                                </Button>
+                                            </Link>
+                                        </Row>
+                                        <Row className='p-3'>
+                                            <Link to={`/code/${userid}`}>
+                                                <Button className='bg-secondary text-wh'  type="submit" fullWidth variant="contained"  sx={{  mb: 2 }}>
+                                                    
+                                                    เปลี่ยนรหัสผ่าน
+                                                </Button>
+                                            </Link>
+                                        </Row>
                                     
-                                </Col>
+                                </Card.Body>
+                            </Card>
+                            <div className='pl-5'>
+                                <Row>
+                                    <Col>
+                                        <div className='mb-4 mt-5'>
+                                            <span className='fs-3'>ประวัติส่วนตัว</span>
+                                        </div>
+                                    </Col>
+                                    <Col>
+                                        <Link to={`/profileupdate/${userid}`}>
+                                            <div className='d-flex justify-content-end'>
+                                                <Button className='bg-secondary text-wh mt-5 '  type="submit" variant="contained"  sx={{  mb: 2 }}>   
+                                                    แก้ไข
+                                                </Button>
+                                            </div>
+                                        </Link>
+                                    </Col>
+
+                                </Row>
                                 
-                            </Row>
-                            <br/>
-                            <Row>
-                                <Col>
-                                    <Form.Control
-                                            type="text"
-                                            placeholder={user.fname}
-                                            aria-label="Disabled input example"
-                                            disabled
-                                            readOnly
+                                
+                                <div>
+                                    <Row>
+                                        <Col>
                                             
-                                    />
-                                </Col>
-                                <Col>
-                                    <Form.Control
-                                            type="text"
-                                            placeholder={user.lanme}
-                                            aria-label="Disabled input example"
-                                            disabled
-                                            readOnly
-                                    />
-                                </Col>
-                                
-                            </Row>
-                            <br/>
-                            <Row>
-                                <Col>
-                                    <Form.Control
-                                            type="text"
-                                            placeholder={user.phonenum}
-                                            aria-label="Disabled input example"
-                                            disabled
-                                            readOnly
-                                    />
-                                    
-                                </Col>
-                            </Row>
-                            <br/>
-                            <Row>
-                                <Col>
-                                    <Form.Control
-                                            type="text"
-                                            placeholder={user.email}
-                                            aria-label="Disabled input example"
-                                            disabled
-                                            readOnly
-                                    />
-                                    
-                                </Col>
-                            </Row>
-                            <br/>
-                            {/* {userlist.map((val,key) =>{
-                                return(
-                                    <div>
-                                        <p> ชื่อผู้ใช้ : {val.username}</p>
-                                    </div>
-                                )
-                            })} */}
+                                            <Form.Control
+                                                    type="text"
+                                                    placeholder={users.username}
+                                                    aria-label="Disabled input example"
+                                                    disabled
+                                                    readOnly
+                                            />
+                                            
+                                        </Col>
+                                        
+                                    </Row>
+                                    <br/>
+                                    <Row>
+                                        <Col>
+                                            <Form.Control
+                                                    type="text"
+                                                    placeholder={users.fname}
+                                                    aria-label="Disabled input example"
+                                                    disabled
+                                                    readOnly
+                                                    
+                                            />
+                                        </Col>
+                                        <Col>
+                                            <Form.Control
+                                                    type="text"
+                                                    placeholder={users.lname}
+                                                    aria-label="Disabled input example"
+                                                    disabled
+                                                    readOnly
+                                            />
+                                        </Col>
+                                        
+                                    </Row>
+                                    <br/>
+                                    <Row>
+                                        <Col>
+                                            <Form.Control
+                                                    type="text"
+                                                    placeholder={users.phonenum}
+                                                    aria-label="Disabled input example"
+                                                    disabled
+                                                    readOnly
+                                            />
+                                            
+                                        </Col>
+                                    </Row>
+                                    <br/>
+                                    <Row>
+                                        <Col>
+                                            <Form.Control
+                                                    type="text"
+                                                    placeholder={users.email}
+                                                    aria-label="Disabled input example"
+                                                    disabled
+                                                    readOnly
+                                            />
+                                            
+                                        </Col>
+                                    </Row>
+                                    <br/>
+                                    {/* {userlist.map((val,key) =>{
+                                        return(
+                                            <div>
+                                                <p> ชื่อผู้ใช้ : {val.username}</p>
+                                            </div>
+                                        )
+                                    })} */}
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </Container>
+                    
+                    
+                </Container>
+            </div>
+        ))}    
         </div>
     )
 }

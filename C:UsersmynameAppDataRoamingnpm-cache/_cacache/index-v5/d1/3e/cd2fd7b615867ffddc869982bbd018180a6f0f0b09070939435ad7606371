@@ -1,2 +1,0 @@
-
-e5b728ce30f2b8b8f72c4ed3c54b859cbe08af85	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/sequelize-pool/-/sequelize-pool-7.1.0.tgz","integrity":null,"time":1689732573481,"size":"0","metadata":{"time":1689732573481,"url":"http://registry.npmjs.org/sequelize-pool/-/sequelize-pool-7.1.0.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Wed, 19 Jul 2023 02:09:33 GMT","location":"https://registry.npmjs.org/sequelize-pool/-/sequelize-pool-7.1.0.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}
