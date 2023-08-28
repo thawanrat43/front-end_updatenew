@@ -20,6 +20,7 @@ import { useQuery, useQueryClient, useMutation } from '@tanstack/react-query';
 import TextField from '@mui/material/TextField';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import LinkContainer from 'react-router-bootstrap/LinkContainer';
 const Profile = ({}) => {
     const [ auth , setAuth] = useState(false);
     const [user ,setUser] = useState([]);
@@ -57,32 +58,37 @@ const Profile = ({}) => {
         <div>
         {user.map((users,i)=>(   
             <div key={i}>
-                <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+                <Navbar collapseOnSelect expand="lg" className="bg-white" >
                     <Container>
-                            <Link to={`/${userid}`}>
+                            <Link to={`/`}>
                                 <Navbar.Brand >CHECK</Navbar.Brand>
                             </Link>
                             
                             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                             <Navbar.Collapse id="responsive-navbar-nav">
-                            <Nav className="justify-content-end flex-grow-1 pe-3 ">
-                            <Link to={`/${userid}`} className='mr-2' style={{ textDecoration: 'none' }}>
-                                <Navbar style={navStyle} >ตรวจประวัติ</Navbar>
-                            </Link>
-                            <Link to={`/pagestatus/${userid}`} style={{ textDecoration: 'none' }}>
-                                <Navbar style={navStyle} >สถานะการตรวจประวัติ</Navbar>
-                            </Link>
+                            <Nav className="justify-content-end flex-grow-1 pe-3 " variant="underline" activeKey="4" >
                             
-                            {/* <Nav.Link href="/login">Login</Nav.Link>
-                                <Nav.Link href="/register">Register</Nav.Link> */}
-                            <Nav.Link onClick={logout}>logout</Nav.Link>
+                            <LinkContainer to={`/${userid}`} className='mr-3 mt-4' style={{ textDecoration: 'none' }} >
+                                <Nav.Link >ตรวจประวัติ</Nav.Link>
+                            </LinkContainer>
+                            <LinkContainer to={`/pagestatus/${userid}`} className='mr-3 mt-4' style={{ textDecoration: 'none' }}>
+                                <Nav.Link   >สถานะการตรวจประวัติ</Nav.Link>
+                            </LinkContainer>
+                            <LinkContainer to={`/profile/${userid}`}  >
+                                    <Nav.Link eventKey="4" className='ml-2 mr-3 '>
+                                        <Image src={"http://localhost:3333/"+users.profilepic}roundedCircle style={{width : '3rem'}} />
+                                </Nav.Link>
+                            </LinkContainer>
+                                    
+                                
+                            <Nav.Link eventKey="2" onClick={logout} className='mt-4'>logout</Nav.Link>
                             </Nav>
                         </Navbar.Collapse>
                     </Container>
                 </Navbar>
                 <Container >
                     
-                        <div  className='d-flex p-5'>
+                        <div  className='d-flex justify-content-center p-5'>
                             
                             <Card style={{ width: '18rem'  }} className='m-5'>
                                 <Card.Body>

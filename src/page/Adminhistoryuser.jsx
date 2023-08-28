@@ -15,7 +15,8 @@ import { useLocation, useParams,Link } from "react-router-dom";
 import axios from "axios"
 import {useNavigate} from "react-router-dom"
 import Button from '@mui/material/Button';
-
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 const Adminhistoryuser = () => {
     const { id }  =useParams();
     const [user ,setUser] = useState([]);
@@ -42,6 +43,22 @@ const Adminhistoryuser = () => {
     }
     return (
         <div>
+            <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+                    <Container>
+
+                    <Navbar.Brand href='/' >CHECK</Navbar.Brand>
+
+                            
+                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                    <Navbar.Collapse id="responsive-navbar-nav">
+                    <Nav className="justify-content-end flex-grow-1 pe-3 " variant="underline" activeKey="1">
+                        <Nav.Link eventKey={1} href="/adminuser">รายชื่อผู้ใช้</Nav.Link>
+                        
+                    <Nav.Link  >logout</Nav.Link>    
+                    </Nav>
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar>   
             <Container >
                 <p className='fs-3 m-4 mt-5'>สถานะการตรวจประวัติ</p>
         

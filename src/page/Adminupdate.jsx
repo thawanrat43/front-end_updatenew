@@ -18,6 +18,8 @@ import { useContext } from "react";
 import { useQuery, useQueryClient, useMutation } from '@tanstack/react-query';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 const Adminupdate = () => {
     const { userid }  =useParams();
     const [user ,setUser] = useState([]);
@@ -40,6 +42,22 @@ const Adminupdate = () => {
     console.log(user);
     return (
         <div>
+            <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+                    <Container>
+
+                    <Navbar.Brand href='/' >CHECK</Navbar.Brand>
+
+                            
+                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                    <Navbar.Collapse id="responsive-navbar-nav">
+                    <Nav className="justify-content-end flex-grow-1 pe-3 " variant="underline" activeKey="1">
+                        <Nav.Link eventKey={1} href="/adminuser">รายชื่อผู้ใช้</Nav.Link>
+                        
+                    <Nav.Link  >logout</Nav.Link>    
+                    </Nav>
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar>   
             <Container className='pl-5'>
                 <div className='mb-4 mt-5'>
                     <span>รายละเอีอดผู้ใช้</span>
@@ -113,11 +131,7 @@ const Adminupdate = () => {
                         <br/>
                         <div className=" m-2 d-flex justify-content-end">
                             <Row  className='d-flex m-4'>
-                                <Col>
-                                    <Button className='bg-secondary' type="submit" fullWidth variant="contained" sx={{ mt: 3, }} onClick={handleClick} style={{width : 150 }}>
-                                        <p className='m-1'>แก้ไข</p> 
-                                    </Button>
-                                </Col>
+                                
                                 <Col>
                                     <Link to={`/adminhistoryuser/${users.id}`}>
                                         <Button className='bg-secondary' type="submit" fullWidth variant="contained" sx={{ mt: 3, }} onClick={handleClick} style={{width : 150 }}>

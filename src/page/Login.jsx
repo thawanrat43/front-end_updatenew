@@ -16,6 +16,11 @@ import { Navigate, useParams } from "react-router-dom";
 import {useNavigate} from "react-router-dom"
 import axios from "axios";
 import { useState } from 'react';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import { Link } from 'react-router-dom';
+import sessionstorage from 'sessionstorage';
+import LinkContainer from 'react-router-bootstrap/LinkContainer';
 const Login = () => {
     const [user,setUser] =useState({})
     const [inputs,setInputs] = useState({
@@ -23,23 +28,24 @@ const Login = () => {
         password: ""
     })
     const [err, setErr] = useState(null);
-    const navigate = useNavigate();
     const handleChange = (e) => {
         setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
     };
     // const { login } = useContext(AuthContext);
     axios.defaults.withCredentials = true;
+    const navigate = useNavigate()
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
             await axios.post("http://localhost:3333/login", inputs);
+            navigate("/");
             if(err){
                 alert('login failed')
                 
             }
             else{
-                alert('login success')
                 
+                alert('login success')
             }    
         } catch (err) {
           setErr(err.response.data);
@@ -47,10 +53,28 @@ const Login = () => {
         }
         
     };
-    
+    console.log(inputs);
     return (
         <div>
-            
+            <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+                    <Container>
+
+                        <Navbar.Brand href='/home' >CHECK</Navbar.Brand>
+
+                            
+                        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                        <Navbar.Collapse id="responsive-navbar-nav">
+                        <Nav className="justify-content-end flex-grow-1 pe-3 ">
+                        
+                        <Nav.Link href='/home' >ตรวจประวัติ</Nav.Link>
+                        
+                        <Nav.Link href="/login">Login</Nav.Link>
+                        <Nav.Link href="/register">Register</Nav.Link>
+                        
+                        </Nav>
+                    </Navbar.Collapse>
+                    </Container>
+            </Navbar>
             <Container fluid  className=' p-5 '>
                 <div className='d-flex justify-content-center'>
                     <p className="fs-1">Login</p>
@@ -78,11 +102,18 @@ const Login = () => {
                         autoComplete="current-password"
                         onChange={handleChange}
                     />
+                    <div className='d-flex justify-content-center'>
+                        {err && err}
+                    </div>
+                    
                     <Row className="align-items-center m-5 d-flex justify-content-center">
                         <Col xs lg="2"  >
-                            <Button className='bg-secondary'  type="submit" fullWidth variant="contained"  sx={{ mt: 3, mb: 2 }} onClick={handleLogin}>
+                           
+                                <Button className='bg-secondary'  type="submit" fullWidth variant="contained"  sx={{ mt: 3, mb: 2 }} onClick={handleLogin}>
                                 <p>Login</p>
-                            </Button>
+                                </Button>
+                        
+                            
                         </Col>
                         <Col className="align-items-center" md="auto">
                             <p>or</p>

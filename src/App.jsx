@@ -1,5 +1,6 @@
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Homenotlogin from './page/Homenotlogin';
 import Login from './page/Login';
 import Home from './page/Home';
 import Register from './page/Register';
@@ -34,12 +35,12 @@ function App() {
   function handlelogout(){
     setlogin(false)
   }
-  
+  // login ? <Navigate to="/pay:id" /> : <Home login={handlelogin}/>}
   return (
     <Router>
       
       <Routes>
-        <Route path='/:userid' element={ login ? <Navigate to="/pay:id" /> : <Home login={handlelogin}/>} />
+        <Route path='/' element={<Home/>} />
         <Route path='/login' element={<Login/>}/>
         <Route path='/register' element={<Register/>}/>
         {/* <Route path='/profile' >
@@ -54,12 +55,13 @@ function App() {
         <Route path='/adminudelete' element={<Admindelete/>}/>
         <Route path='/delete/:id' element={<Delete/>}/>
         <Route path='/pagestatus/:id' element={<Pagestatus/>}/>
-        <Route path='/history/:id' element={<History/>}/>
+        <Route path='/history/:userid' element={<History/>}/>
         <Route path='/adminhistory/:id' element={<Adminhistory/>}/>
         <Route path='/adminhistoryuser/:id' element={<Adminhistoryuser/>}/>
-        <Route path='/pay/:id' element={<Pay/>}/>
+        <Route path='/pay' element={<Pay/>}/>
         <Route path='/qrcode/:id' element={<Qrcode/>}/>
         <Route path='/finish/:id' element={<Finish/>}/>
+        <Route path='/home' element={<Homenotlogin/>}/>
       </Routes>
     </Router>
    

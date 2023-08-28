@@ -18,6 +18,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import LinkContainer from 'react-router-bootstrap/LinkContainer';
 const Profileupdate = () => {
     const [ auth , setAuth] = useState(false);
     const [user ,setUser] = useState([]);
@@ -105,25 +106,30 @@ const Profileupdate = () => {
         <div>
         {user.map((users,i)=>(    
             <div key={i}>
-                <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+                <Navbar collapseOnSelect expand="lg" className="bg-white">
                     <Container>
-                        <Link to={`/${userid}`}>
+                        <Link to={`/`}>
                             <Navbar.Brand >CHECK</Navbar.Brand>
                         </Link>
                             
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="justify-content-end flex-grow-1 pe-3 ">
-                        <Link to={`/home/${userid}`} className='mr-2'>
-                            <Navbar.Brand style={navStyle} >ตรวจประวัติ</Navbar.Brand>
-                        </Link>
-                        <Link to={`/pagestatus/${userid}`}>
-                            <Navbar.Brand  style={navStyle} >สถานะการตรวจประวัติ</Navbar.Brand>
-                        </Link>
+                        <Nav className="justify-content-end flex-grow-1 pe-3 " variant="underline" activeKey="4" >
                             
-                            {/* <Nav.Link href="/login">Login</Nav.Link>
-                                <Nav.Link href="/register">Register</Nav.Link> */}
-                        <Navbar.Brand onClick={logout} style={navStyle}>logout</Navbar.Brand>
+                            <LinkContainer to={`/${userid}`} className='mr-3 mt-4' style={{ textDecoration: 'none' }} >
+                                <Nav.Link >ตรวจประวัติ</Nav.Link>
+                            </LinkContainer>
+                            <LinkContainer to={`/pagestatus/${userid}`} className='mr-3 mt-4' style={{ textDecoration: 'none' }}>
+                                <Nav.Link   >สถานะการตรวจประวัติ</Nav.Link>
+                            </LinkContainer>
+                            <LinkContainer to={`/profile/${userid}`}  >
+                                    <Nav.Link eventKey="4" className='ml-2 mr-3 '>
+                                        <Image src={"http://localhost:3333/"+users.profilepic}roundedCircle style={{width : '3rem'}} />
+                                </Nav.Link>
+                            </LinkContainer>
+                                    
+                                
+                            <Nav.Link eventKey="2" onClick={logout} className='mt-4'>logout</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                     </Container>
@@ -131,24 +137,25 @@ const Profileupdate = () => {
                 <Container >
                     
                         
-                        <div  className='d-flex p-5'>
+                        <div  className='d-flex justify-content-center p-5'>
                             
                             <Card style={{ width: '18rem'  }} className='m-5'>
                                 <Card.Body>
-                                    <Row>
+                                    <Row >
                                         <Col xs={6} md={4}> 
-                                            <div cstyle={{width: 50 , height :50}} variant="contained">
+                                            <div>
                                                 <input type="file"   onChange={e => setFile(e.target.files[0])}/>
                                                 
                                             </div>
+ 
+                                        </Col>
+                                        <Col className='d-flex justify-content-center'>
                                             <Image className='mt-3' src={"http://localhost:3333/"+users.profilepic}roundedCircle style={{width : '15rem' ,height : '15rem'}} />
-                                            <div >
-                                                <Button className='bg-secondary text-white ml-3 p-2 '  type="submit"onClick={updatepic}>
-                                                    Submit
-                                                </Button>
-                                            </div>
-                                        
-                                            
+                                        </Col>
+                                        <Col className='d-flex justify-content-center'>
+                                            <Button className='bg-secondary text-white p-2 '  type="submit"onClick={updatepic}>
+                                                        Submit
+                                            </Button>
                                         </Col>
                                     </Row>
                                     <Row className='p-3'>

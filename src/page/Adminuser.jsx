@@ -15,6 +15,8 @@ import { useLocation, useParams,Link } from "react-router-dom";
 import axios from "axios"
 import {useNavigate} from "react-router-dom"
 import Button from '@mui/material/Button';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 const Adminuser = () => {
     const [user ,setUser] = useState([]);
     const getdata = async ()=>{
@@ -42,26 +44,42 @@ const Adminuser = () => {
     }
     return (
         <div>
+            <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+                    <Container>
+
+                    <Navbar.Brand href='/' >CHECK</Navbar.Brand>
+
+                            
+                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                    <Navbar.Collapse id="responsive-navbar-nav">
+                    <Nav className="justify-content-end flex-grow-1 pe-3 " variant="underline" activeKey="1">
+                        <Nav.Link eventKey={1} href="/adminuser">รายชื่อผู้ใช้</Nav.Link>
+                        
+                    <Nav.Link  >logout</Nav.Link>    
+                    </Nav>
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar>   
             <Container fluid  className=' p-5 ' >
                 <Row  className='d-flex m-4'>
                     <Col>
                         <p className="fs-1" >ผู้ใช้</p>
                     </Col>
                     <Col>
-                        <Button className='bg-secondary' type="submit" fullWidth variant="contained" sx={{ mt: 3, }} onClick={handleClick}>
+                        <Button href='/adminregister' className='bg-secondary text-white' type="submit" fullWidth variant="contained" sx={{ mt: 3, }} onClick={handleClick}>
                             <p>เพิ่มผู้ใช้</p> 
                         </Button>
                     </Col>
                     <Col>
-                        <Button className='bg-secondary' type="submit" fullWidth variant="contained" sx={{ mt: 3, }} onClick={handleClick}>
+                        <Button href='/adminudelete' className='bg-secondary text-white' type="submit" fullWidth variant="contained" sx={{ mt: 3, }} onClick={handleClick}>
                             <p>ระงับผู้ใช้</p> 
                         </Button>
                     </Col>    
                 </Row>
                 {user.map((users,key)=>
                     <div key={key} >
-                        <Link to={`/adminupdate/${users.id}`}>
-                            <Row className='m-3 mt-5' >
+                        <Link to={`/adminupdate/${users.id}`} style={{ textDecoration: 'none' }}>
+                            <Row className='m-3 mt-3 p-3'  >
                                 <div style= { headlineStyle }>
                                     <Row className='mt-3 ml-5 '>
                                         <Col>

@@ -17,6 +17,10 @@ import axios from "axios"
 import {useNavigate} from "react-router-dom"
 import Button from '@mui/material/Button';
 import { TextField } from '@mui/material';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import LinkContainer from 'react-router-bootstrap/LinkContainer';
+
 const Adminhistory = () => {
     const [input,setInputs] =useState({
         birthday:"",
@@ -40,10 +44,8 @@ const Adminhistory = () => {
             console.log(err);
         }
     }
-    useEffect(() => {
-            
+    useEffect(() => {     
         getdata();
-       
     }, []);
     const handleClick = async (e) => {
         e.preventDefault();
@@ -65,19 +67,27 @@ const Adminhistory = () => {
     };
     console.log(id);
     console.log(user);
-    const criminal = async ()=>{
-        if(users.criminal == null)
-        {
-
-        }else{
-            
-        }
-    } 
     const handleChange = (e) => {
         setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
     };
     return (
         <div>
+         <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+                    <Container>
+
+                    <Navbar.Brand href='/' >CHECK</Navbar.Brand>
+
+                            
+                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                    <Navbar.Collapse id="responsive-navbar-nav">
+                    <Nav className="justify-content-end flex-grow-1 pe-3 " variant="underline" activeKey="1">
+                        <Nav.Link eventKey={1} href="/adminuser">รายชื่อผู้ใช้</Nav.Link>
+                        
+                    <Nav.Link  >logout</Nav.Link>    
+                    </Nav>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar>   
         <Container>
             <div className='m-5'>
                 <p className='fs-2 mb-5'>เพิ่มประวัติผู้ใช้</p>
@@ -228,12 +238,10 @@ const Adminhistory = () => {
                                             </Button>
                                         </Col>
                                         <Col>
-                                            <Button className='fs-5 ml-3 text-black'style={{backgroundColor:'#CD5C5C',width:90,height:60}}>
+                                            <Button href='/adminhistoryuser' className='fs-5 ml-3 text-black'style={{backgroundColor:'#CD5C5C',width:90,height:60}}>
                                                 <p>ยกเลิก</p>
                                             </Button>
                                         </Col>
-                                        
-
                                     </Row>
                             </div>
                         </div>

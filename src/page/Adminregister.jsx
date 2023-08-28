@@ -15,7 +15,9 @@ import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import { useState } from 'react';
 import axios from "axios"
-
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import { useNavigate } from 'react-router-dom';
 const Adminregister = () => {
     const [inputs,setInputs] = useState({
         username: "",
@@ -27,6 +29,7 @@ const Adminregister = () => {
         status:"",
         statusadmin:""
     })
+    const navigate = useNavigate()
     const [err, setErr] = useState(null);
     const handleChangecheck = (e) => {
         setInputs((prev) => ({ ...prev, [e.target.name]: e.target.checked }));
@@ -40,6 +43,7 @@ const Adminregister = () => {
     
         try {
           await axios.post("http://localhost:3333/adminregister", inputs);
+          navigate("/");
           if(!err){
             
           }
@@ -52,11 +56,28 @@ const Adminregister = () => {
     console.log(inputs)
     return (
         <div>
-            <Container fluid  className=' p-5 ' >
-                    <div className='d-flex m-4'>
+            <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+                    <Container>
+
+                    <Navbar.Brand href='/' >CHECK</Navbar.Brand>
+
+                            
+                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                    <Navbar.Collapse id="responsive-navbar-nav">
+                    <Nav className="justify-content-end flex-grow-1 pe-3 " variant="underline" activeKey="1">
+                        <Nav.Link eventKey={1} href="/adminuser">รายชื่อผู้ใช้</Nav.Link>
+                        
+                    <Nav.Link  >logout</Nav.Link>    
+                    </Nav>
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar>   
+            <Container fluid  className=' justify-content-center p-5 ' >
+
+                    <div className='d-flex  m-4'>
                         <p className="fs-1" >เพิ่มผู้ใช้</p>
                     </div>
-                    <div className='d-flex '>
+                    <div className='d-flex ml-4'>
                         <Col>
                             <Box component="form" noValidate sx={{ mt: 1 }} >
                                 <Row>
@@ -166,7 +187,7 @@ const Adminregister = () => {
                     <br/>
                     <Row className=" m-2 d-flex justify-content-end">
                         <Col xs lg="2">
-                            <Button className='bg-secondary text-white' type="submit" fullWidth variant="contained" onClick={handleClick} sx={{ mt: 3, }}>
+                            <Button  className='bg-secondary text-white' type="submit" fullWidth variant="contained" onClick={handleClick} sx={{ mt: 3, }}>
                             <p className='m-2'>บันทึก</p> 
                             </Button>
                         </Col>
