@@ -17,7 +17,7 @@ import Delete  from './page/Delete';
 import Adminregister from './page/Adminregister'
 import Adminuser from './page/Adminuser'
 import Adminupdate from './page/Adminupdate';
-import Admindelete from './page/admindelete';
+import Admindelete from './page/Admindelete';
 import {BrowserRouter as Router, Route, Link, Routes, Navigate} from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
