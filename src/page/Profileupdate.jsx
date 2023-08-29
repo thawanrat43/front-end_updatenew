@@ -108,7 +108,7 @@ const Profileupdate = () => {
             <div key={i}>
                 <Navbar collapseOnSelect expand="lg" className="bg-white">
                     <Container>
-                        <Link to={`/`}>
+                        <Link to={`/home`}>
                             <Navbar.Brand >CHECK</Navbar.Brand>
                         </Link>
                             

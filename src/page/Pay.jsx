@@ -47,7 +47,7 @@ const Pay = () => {
         {user.map((users,key9)=>
         <Navbar key={key9} collapseOnSelect expand="lg" className="bg-wh">
             <Container>
-              <Link to={`/`}>
+              <Link to={`/home`}>
                 <Navbar.Brand >CHECK</Navbar.Brand>
               </Link>
                               

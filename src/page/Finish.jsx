@@ -45,7 +45,7 @@ const Finish = () => {
             {user.map((users,key15)=>
                 <Navbar key={key15} collapseOnSelect expand="lg" className="bg-body-tertiary">
                     <Container>
-                            <Link to={`/`}>
+                            <Link to={`/home`}>
                                 <Navbar.Brand >CHECK</Navbar.Brand>
                             </Link>
                             

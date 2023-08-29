@@ -37,8 +37,8 @@ const Login = () => {
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            await axios.post("https://back-end-nr6u.onrender.com//login", inputs);
-            navigate("/");
+            await axios.post("https://back-end-nr6u.onrender.com/login", inputs);
+            navigate("/home");
             if(err){
                 alert('login failed')
                 
@@ -59,7 +59,7 @@ const Login = () => {
             <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
                     <Container>
 
-                        <Navbar.Brand href='/home' >CHECK</Navbar.Brand>
+                        <Navbar.Brand href='/' >CHECK</Navbar.Brand>
 
                             
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />

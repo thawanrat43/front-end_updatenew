@@ -103,7 +103,7 @@ const Home =() =>{
         <div key={key13}>
             <Navbar collapseOnSelect expand="lg" className="bg-wh">
                 <Container>
-                        <Link to={`/`}>
+                        <Link to={`/home`}>
                             <Navbar.Brand >CHECK</Navbar.Brand>
                         </Link>
                         

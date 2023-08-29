@@ -73,7 +73,7 @@ const Code = () => {
             <div key={key} >
                 <Navbar collapseOnSelect expand="lg" className="bg-white">
                     <Container>
-                            <Link to={`/${userid}`}>
+                            <Link to={`/home`}>
                                 <Navbar.Brand >CHECK</Navbar.Brand>
                             </Link>
                             

@@ -63,7 +63,7 @@ const Qrcode = () => {
         <div  key={key4}>
           <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
             <Container>
-              <Link to={`/`}>
+              <Link to={`/home`}>
                 <Navbar.Brand >CHECK</Navbar.Brand>
               </Link>
                               

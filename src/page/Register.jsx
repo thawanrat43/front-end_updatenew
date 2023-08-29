@@ -70,7 +70,7 @@ const Register = () => {
         <div>
             <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
                     <Container>
-                        <Link to={`/home`}>
+                        <Link to={`/`}>
                             <Navbar.Brand >CHECK</Navbar.Brand>
                         </Link>
                             

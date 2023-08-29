@@ -74,7 +74,7 @@ const History = () => {
                 {profile.map((profiles,key19)=>( 
                 <Navbar key={key19} collapseOnSelect expand="lg" className="bg-wh">
                     <Container>
-                            <Link to={`/`}>
+                            <Link to={`/home`}>
                                 <Navbar.Brand >CHECK</Navbar.Brand>
                             </Link>
                             
