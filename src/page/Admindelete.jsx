@@ -24,7 +24,7 @@ const admindelete = () => {
     const [modalOpen, setModalOpen] = useState(false);
     const getdata = async ()=>{
         try{
-            const response = await axios.get(`http://localhost:3333/adminuser`);
+            const response = await axios.get(`https://back-end-nr6u.onrender.com/adminuser`);
             setUser(response.data);
         } catch (err) {
             console.log(err);

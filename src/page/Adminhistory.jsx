@@ -38,7 +38,7 @@ const Adminhistory = () => {
     const [user ,setUser] = useState([]);
     const getdata = async ()=>{
         try{
-            const response = await axios.get(`http://localhost:3333/historyselect/${id}`);
+            const response = await axios.get(`https://back-end-nr6u.onrender.com/historyselect/${id}`);
             setUser(response.data);
         } catch (err) {
             console.log(err);
@@ -51,7 +51,7 @@ const Adminhistory = () => {
         e.preventDefault();
     
         try {
-          await axios.post(`http://localhost:3333/adminhistory/${id}`, input)
+          await axios.post(`https://back-end-nr6u.onrender.com/adminhistory/${id}`, input)
           .then((response) => {
             if (response.data.error) {
                 alert(response.data.error);

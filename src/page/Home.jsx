@@ -64,7 +64,7 @@ const Home =() =>{
         e.preventDefault();
     
         try {
-          await axios.post(`http://localhost:3333/home`, inputs)
+          await axios.post(`https://back-end-nr6u.onrender.com/home`, inputs)
           
           .then((response) => {
             if (response.data.error) {
@@ -79,7 +79,7 @@ const Home =() =>{
     };
     const getdata = async ()=>{
         try{
-            const response = await axios.get(`http://localhost:3333/profileid`);
+            const response = await axios.get(`https://back-end-nr6u.onrender.com/profileid`);
             setUser(response.data);
         } catch (err) {
             console.log(err);
@@ -87,7 +87,7 @@ const Home =() =>{
     }
     const getidhistory = async (e)=>{
         try{
-            const response = await axios.post(`http://localhost:3333/idhistory`,inputs);
+            const response = await axios.post(`https://back-end-nr6u.onrender.com/idhistory`,inputs);
             setHistory(response.data);
         } catch (err) {
             console.log(err);

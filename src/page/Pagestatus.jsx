@@ -24,7 +24,7 @@ const Pagestatus = () => {
     const [profile,setProfile] =useState([]);
     const getdata = async ()=>{
         try{
-            const response = await axios.get(`http://localhost:3333/pagestatus/${id}`);
+            const response = await axios.get(`https://back-end-nr6u.onrender.com/pagestatus/${id}`);
             setUser(response.data);
         } catch (err) {
             console.log(err);
@@ -32,7 +32,7 @@ const Pagestatus = () => {
     }
     const getprofile = async ()=>{
         try{
-            const response = await axios.get(`http://localhost:3333/profile/${id}`);
+            const response = await axios.get(`https://back-end-nr6u.onrender.com/profile/${id}`);
             setProfile(response.data);
             
         } catch (err) {

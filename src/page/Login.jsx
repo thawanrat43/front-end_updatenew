@@ -37,7 +37,7 @@ const Login = () => {
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            await axios.post("http://localhost:3333/login", inputs);
+            await axios.post("https://back-end-nr6u.onrender.com//login", inputs);
             navigate("/");
             if(err){
                 alert('login failed')

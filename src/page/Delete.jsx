@@ -25,7 +25,7 @@ const Delete = () => {
     const [user ,setUser] = useState([]);
     const getdata = async ()=>{
         try{
-            const response = await axios.get(`http://localhost:3333/profile/${id}`);
+            const response = await axios.get(`https://back-end-nr6u.onrender.com/profile/${id}`);
             setUser(response.data);
         } catch (err) {
             console.log(err);
@@ -40,7 +40,7 @@ const Delete = () => {
     }, []);
     const deletedata = async () => {
         try{
-            await axios.post(`http://localhost:3333/admindelete/${id}`
+            await axios.post(`https://back-end-nr6u.onrender.com//admindelete/${id}`
             )
             .then((response) => {
             if (response.data.error) {

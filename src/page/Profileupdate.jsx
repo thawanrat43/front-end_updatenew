@@ -44,7 +44,7 @@ const Profileupdate = () => {
         formdata.append('file',file)
         e.preventDefault();
         try{
-            axios.post(`http://localhost:3333/updatepic/${userid}`,formdata)
+            axios.post(`https://back-end-nr6u.onrender.com/updatepic/${userid}`,formdata)
             .then((response) => {
             if (response.data.error) {
                 alert(response.data.error);
@@ -61,7 +61,7 @@ const Profileupdate = () => {
     };
     const getimage = async ()=>{
         try{
-            axios.get(`http://localhost:3333/image/${userid}`)
+            axios.get(`https://back-end-nr6u.onrender.com/image/${userid}`)
             .then(response =>
                 setimage(response.data[0].image)
             )

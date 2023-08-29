@@ -19,7 +19,7 @@ const Pay = () => {
   const [user ,setUser] = useState([]);
   const getdata = async ()=>{
     try{
-        const response = await axios.get(`http://localhost:3333/profileid`);
+        const response = await axios.get(`https://back-end-nr6u.onrender.com/profileid`);
         setUser(response.data);
     } catch (err) {
         console.log(err);

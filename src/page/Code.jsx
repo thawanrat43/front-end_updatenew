@@ -25,7 +25,7 @@ const Code = () => {
 
     const updatepassword=async ()=>{
         try{
-            await axios.post(`http://localhost:3333/code/${userid}`,
+            await axios.post(`https://back-end-nr6u.onrender.com/${userid}`,
             {
                 oldpassword: oldpassword,
                 newpassword: newpassword,

@@ -22,7 +22,7 @@ const Qrcode = () => {
     const data = 0 ;
     const getdata = async ()=>{
       try{
-          const response = await axios.get(`http://localhost:3333/profilehistory/${id}`);
+          const response = await axios.get(`https://back-end-nr6u.onrender.com/profilehistory/${id}`);
           setUser(response.data);
       } catch (err) {
           console.log(err);
@@ -36,7 +36,7 @@ const Qrcode = () => {
     const updatepay = async (e)=> {
       e.preventDefault();
       try{
-          await axios.post(`http://localhost:3333/pay/${id}`)
+          await axios.post(`https://back-end-nr6u.onrender.com/pay/${id}`)
           .then((response) => {
           if (response.data.error) {
               alert(response.data.error);

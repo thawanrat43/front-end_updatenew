@@ -30,7 +30,7 @@ const History = () => {
     }
     const getprofile = async ()=>{
         try{
-            const response = await axios.get(`http://localhost:3333/profilehistory/${userid}`);
+            const response = await axios.get(`https://back-end-nr6u.onrender.com/profilehistory/${userid}`);
             setProfile(response.data);
         } catch (err) {
             console.log(err);
@@ -38,7 +38,7 @@ const History = () => {
     };
     const getdata = async ()=>{
         try{
-            const response = await axios.get(`http://localhost:3333/historydetail/${userid}`);
+            const response = await axios.get(`https://back-end-nr6u.onrender.com/historydetail/${userid}`);
             setUser(response.data);
         } catch (err) {
             console.log(err);
@@ -46,7 +46,7 @@ const History = () => {
     }
     const gethistory = async ()=>{
         try{
-            const response = await axios.get(`http://localhost:3333/history/${userid}`);
+            const response = await axios.get(`https://back-end-nr6u.onrender.com/history/${userid}`);
             setHistory(response.data);
         } catch (err) {
             console.log(err);

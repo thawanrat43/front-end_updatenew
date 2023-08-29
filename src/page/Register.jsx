@@ -38,7 +38,7 @@ const Register = () => {
         e.preventDefault();
     
         try {
-          await axios.post("http://localhost:3333/register", inputs);
+          await axios.post("https://back-end-nr6u.onrender.com/register", inputs);
           navigate("/login");
         } catch (err) {
           setErr(err.response.data);

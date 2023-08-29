@@ -24,7 +24,7 @@ const Finish = () => {
     const [profile,setProfile] =useState([]);
     const getprofile = async ()=>{
         try{
-            const response = await axios.get(`http://localhost:3333/profile/${id}`);
+            const response = await axios.get(`https://back-end-nr6u.onrender.com/profile/${id}`);
             setUser(response.data);
             
         } catch (err) {
