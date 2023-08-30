@@ -57,7 +57,7 @@ const Homenotlogin =() =>{
         e.preventDefault();
     
         try {
-          await axios.post(`http://localhost:3333/home/${userid}`, inputs)
+          await axios.post(`https://back-end-nr6u.onrender.com//${userid}`, inputs)
           .then((response) => {
             if (response.data.error) {
                 alert(response.data.error);
