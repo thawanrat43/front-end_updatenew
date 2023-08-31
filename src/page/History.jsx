@@ -81,7 +81,7 @@ const History = () => {
                             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                             <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="justify-content-end flex-grow-1 pe-3 " variant="underline" activeKey="3" >
-                            
+                             
                                 <LinkContainer to={`/${userid}`} className='mr-3 ' style={{ textDecoration: 'none' }} >
                                     <Nav.Link eventKey="1">ตรวจประวัติ</Nav.Link>
                                 </LinkContainer>
